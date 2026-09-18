@@ -9,3 +9,4 @@ data/
 chroma_db/
 
 .pytest_cache/
+sample_documents/*.pdf
