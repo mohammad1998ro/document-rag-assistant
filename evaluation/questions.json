@@ -1,0 +1,39 @@
+[
+    {
+      "id": "q1",
+      "question": "Ce este programarea orientata pe obiecte?",
+      "expected_answer_contains": [
+        "obiect",
+        "clasa"
+      ],
+      "should_answer": true
+    },
+    {
+      "id": "q2",
+      "question": "Ce inseamna mostenirea in programarea orientata pe obiecte?",
+      "expected_answer_contains": [
+        "mostenire"
+      ],
+      "should_answer": true
+    },
+    {
+      "id": "q3",
+      "question": "Ce este o clasa in programarea orientata pe obiecte?",
+      "expected_answer_contains": [
+        "clasa"
+      ],
+      "should_answer": true
+    },
+    {
+      "id": "q4",
+      "question": "Care este capitala Japoniei?",
+      "expected_answer_contains": [],
+      "should_answer": false
+    },
+    {
+      "id": "q5",
+      "question": "Cine a castigat Campionatul Mondial de Fotbal din 2022?",
+      "expected_answer_contains": [],
+      "should_answer": false
+    }
+  ]

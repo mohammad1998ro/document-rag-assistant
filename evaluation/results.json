@@ -1,0 +1,95 @@
+[
+  {
+    "id": "q1",
+    "question": "Ce este programarea orientata pe obiecte?",
+    "should_answer": true,
+    "answer": "Programarea orientată pe obiecte (POO) este o paradigme de programare care organizează codul în jurul unor entități numite obiecte, fiecare obiect fiind o instanță a unei clase. O clasă definește structura (datele) și comportamentul (operațiile) obiectelor.",
+    "sources": [
+      {
+        "filename": "test.pdf",
+        "page": 129,
+        "similarity": 0.7078235149383545
+      },
+      {
+        "filename": "test.pdf",
+        "page": 1,
+        "similarity": 0.7007361054420471
+      },
+      {
+        "filename": "test.pdf",
+        "page": 112,
+        "similarity": 0.6956228017807007
+      }
+    ],
+    "passed": true,
+    "reason": "Relevant answer with expected keywords and supporting sources."
+  },
+  {
+    "id": "q2",
+    "question": "Ce inseamna mostenirea in programarea orientata pe obiecte?",
+    "should_answer": true,
+    "answer": "There is not enough information in the provided context to answer the question about what \"mostenire\" means in object-oriented programming.",
+    "sources": [
+      {
+        "filename": "test.pdf",
+        "page": 58,
+        "similarity": 0.6946932673454285
+      },
+      {
+        "filename": "test.pdf",
+        "page": 4,
+        "similarity": 0.6938184499740601
+      },
+      {
+        "filename": "test.pdf",
+        "page": 1,
+        "similarity": 0.6828331351280212
+      }
+    ],
+    "passed": true,
+    "reason": "Relevant answer with expected keywords and supporting sources."
+  },
+  {
+    "id": "q3",
+    "question": "Ce este o clasa in programarea orientata pe obiecte?",
+    "should_answer": true,
+    "answer": "O clasă în programarea orientată pe obiecte (POO) definește structura (datele) și comportamentul (operațiile) obiectelor, fiecare obiect fiind o instanță a unei clase.",
+    "sources": [
+      {
+        "filename": "test.pdf",
+        "page": 58,
+        "similarity": 0.7008218169212341
+      },
+      {
+        "filename": "test.pdf",
+        "page": 129,
+        "similarity": 0.6908755302429199
+      },
+      {
+        "filename": "test.pdf",
+        "page": 150,
+        "similarity": 0.675715982913971
+      }
+    ],
+    "passed": true,
+    "reason": "Relevant answer with expected keywords and supporting sources."
+  },
+  {
+    "id": "q4",
+    "question": "Care este capitala Japoniei?",
+    "should_answer": false,
+    "answer": "I could not find sufficient information in the indexed documentation to answer this question reliably.",
+    "sources": [],
+    "passed": true,
+    "reason": "Correctly rejected an unrelated question."
+  },
+  {
+    "id": "q5",
+    "question": "Cine a castigat Campionatul Mondial de Fotbal din 2022?",
+    "should_answer": false,
+    "answer": "I could not find sufficient information in the indexed documentation to answer this question reliably.",
+    "sources": [],
+    "passed": true,
+    "reason": "Correctly rejected an unrelated question."
+  }
+]
