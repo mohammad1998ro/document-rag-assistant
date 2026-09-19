@@ -301,6 +301,158 @@ Each grounded answer can display:
 * similarity score
 ---
 
+📄 Document Management
+
+Existing documents are displayed in the sidebar.
+
+For each document, the user can:
+
+Re-index
+```
+Re-index
+```
+This removes the previous vectors and recreates the index from the PDF.
+
+Delete
+```
+Delete
+```
+This removes:
+
+* the PDF file from sample_documents/
+* all associated chunks from ChromaDB
+
+---
+
+🚫 No-Answer Behavior
+
+The RAG system uses a minimum similarity threshold.
+
+If the retrieved context is not relevant enough, the system avoids answering from general model knowledge.
+
+Example unrelated question:
+```
+Care este capitala Japoniei?
+```
+Expected behavior:
+```
+I could not find sufficient information in the indexed documentation
+to answer this question reliably.
+```
+No supporting sources are returned.
+
+This reduces hallucination and keeps responses grounded in indexed documents.
+
+---
+
+🧪 Evaluation
+
+The project contains an automated evaluation suite.
+
+Evaluation questions are stored in:
+```
+evaluation/questions.json
+```
+Run evaluation with:
+```
+python -m evaluation.run_evaluation
+```
+The suite contains:
+
+* answerable document-grounded questions
+* unrelated questions that should be rejected
+
+Example output:
+```
+Answerable questions: 3/3
+Rejected correctly: 2/2
+Overall passed: 5/5
+Overall failed: 0/5
+Accuracy: 100.0%
+```
+Detailed results are saved to:
+```
+evaluation/results.json
+```
+The reported accuracy refers only to the included evaluation dataset and should not be interpreted as universal model accuracy.
+
+---
+
+📊 Current Evaluation Result
+```
+Current test suite:
+Total questions: 5
+Answerable questions: 3
+Unrelated questions: 2
+Passed: 5
+Failed: 0
+Evaluation-set accuracy: 100%
+```
+
+The evaluation also normalizes Romanian diacritics during keyword comparison.
+
+For example:
+```
+clasă
+```
+and:
+```
+clasa
+```
+are treated equivalently during automatic evaluation.
+
+---
+
+🧩 Main Components
+
+PDF Loader
+
+Reads PDF files and preserves page-level metadata.
+
+Cleaner
+
+Normalizes extracted text before indexing.
+
+Chunker
+
+Splits documents into smaller retrieval units.
+
+Embedder
+
+Converts document chunks and user queries into semantic vectors.
+
+Vector Store
+
+Uses ChromaDB for persistent vector storage.
+
+Stored metadata includes:
+```
+document_id
+filename
+page
+chunk_number
+```
+
+Retriever
+
+Finds the most semantically relevant chunks for a question.
+
+RAG Pipeline
+
+Combines retrieved document context with the selected LLM.
+
+LLM Providers
+
+The system uses a shared LLM abstraction.
+
+Implementations:
+```
+OllamaProvider
+OpenAIProvider
+```
+This allows provider switching without rewriting the RAG logic.
+
+---
 
 
 
