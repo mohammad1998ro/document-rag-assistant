@@ -454,7 +454,105 @@ This allows provider switching without rewriting the RAG logic.
 
 ---
 
+🔒 Security
 
+Sensitive values such as API keys are stored only in .env.
+
+The following files are excluded from Git:
+```
+.env
+sample_documents/*.pdf
+chroma_db/
+```
+API keys should never be hard-coded into Python source files.
+
+---
+
+⚠️ Limitations
+
+Current limitations include:
+
+* scanned/image-only PDFs may require OCR
+* retrieval quality depends on embedding quality and chunking strategy
+* the evaluation dataset is intentionally small
+* local LLM response quality depends on the selected Ollama model
+* semantic similarity thresholds may require tuning for different document domains
+* very large document collections may require additional indexing optimizations
+
+---
+
+🔮 Possible Future Improvements
+
+Potential extensions include:
+
+* OCR support for scanned PDFs
+* hybrid BM25 + vector retrieval
+* reranking retrieved chunks
+* conversational chat history
+* advanced document metadata
+* multi-user support
+* Docker deployment
+* larger evaluation datasets
+* retrieval metrics such as Recall@K and MRR
+* automatic answer-quality scoring
+* citation highlighting inside PDF pages
+
+---
+
+🛠️ Technology Stack
+
+* Python
+* Streamlit
+* PyMuPDF
+* Sentence Transformers
+* ChromaDB
+* Ollama
+* OpenAI API
+* python-dotenv
+* Git
+
+---
+
+🎓 Project Goal
+
+The goal of this project is to demonstrate a complete Retrieval-Augmented Generation system that:
+
+1. ingests user documents,
+2. builds a semantic search index,
+3. retrieves relevant context,
+4. grounds LLM responses in that context,
+5. provides source references,
+6. supports interchangeable local and cloud LLM providers,
+7. reduces hallucination through retrieval thresholds,
+8. and exposes the system through an interactive user interface.
+
+---
+
+✅ Project Status
+
+Implemented:
+
+* PDF ingestion
+* Text cleaning
+* Chunking
+* Embeddings
+* Persistent vector database
+* Semantic retrieval
+* RAG pipeline
+* Source references
+* Ollama integration
+* OpenAI integration
+* Provider switching
+* No-answer behavior
+* Streamlit interface
+* Document upload and indexing
+* Document list
+* Document re-index
+* Document delete
+* Automated evaluation
+* Environment-based secret management
+
+---
 
 
 
