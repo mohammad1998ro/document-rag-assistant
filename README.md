@@ -142,7 +142,7 @@ document-rag-assistant/
 
 ---
 
-🚀 Installation
+🚀 Installation and How to get started
 
 Clone the repository:
 ```
