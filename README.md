@@ -72,8 +72,189 @@ Ollama Provider   OpenAI Provider
               ▼
       Sources + Page Numbers
 
-The same RAGPipeline is used for both LLM providers.
 ```
+The same RAGPipeline is used for both LLM providers.
+
+---
+
+
+📁 Project Structure
+```
+document-rag-assistant/
+│
+├── app.py
+├── README.md
+├── requirements.txt
+├── .env.example
+├── .gitignore
+│
+├── sample_documents/
+│
+├── evaluation/
+│   ├── __init__.py
+│   ├── questions.json
+│   ├── results.json
+│   └── run_evaluation.py
+│
+├── src/
+│   ├── __init__.py
+│   │
+│   ├── document_management/
+│   │   └── __init__.py
+│   │
+│   ├── ingestion/
+│   │   ├── __init__.py
+│   │   ├── pdf_loader.py
+│   │   ├── cleaner.py
+│   │   └── chunker.py
+│   │
+│   ├── llm/
+│   │   ├── __init__.py
+│   │   ├── base.py
+│   │   ├── ollama_provider.py
+│   │   └── openai_provider.py
+│   │
+│   ├── rag/
+│   │   ├── __init__.py
+│   │   └── pipeline.py
+│   │
+│   └── retrieval/
+│       ├── __init__.py
+│       ├── embedder.py
+│       ├── indexer.py
+│       ├── retriever.py
+│       └── vector_store.py
+│
+├── chroma_db/
+├── data/
+├── docs/
+├── tests/
+└── config/
+```
+---
+
+⚙️ Requirements
+
+* Python 3.12+
+* Ollama
+* Internet connection for OpenAI API usage
+* macOS, Linux, or Windows
+
+---
+
+🚀 Installation
+
+Clone the repository:
+```
+git clone <your-repository-url>
+cd document-rag-assistant
+```
+Create a virtual environment:
+```
+python -m venv .venv
+```
+Activate it.
+
+macOS / Linux
+```
+source .venv/bin/activate
+```
+Windows
+```
+.venv\Scripts\activate
+```
+
+Install dependencies:
+```
+pip install -r requirements.txt
+```
+
+---
+
+🔐 Environment Variables
+Create a .env file in the project root.
+
+You can start from:
+```
+.env.example
+```
+Example:
+```
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL=gpt-5.6-luna
+
+```
+
+Important:
+
+* Never commit .env
+* Never share API keys publicly
+* .env is ignored by Git
+
+---
+
+🧠 Ollama Setup
+
+Install Ollama from the official Ollama website.
+
+Then download the local model:
+```
+ollama pull qwen2.5:3b
+```
+
+Test it:
+```
+ollama run qwen2.5:3b "Say hello in Romanian."
+```
+If Ollama is not already running:
+```
+ollama serve
+```
+
+---
+
+☁️ OpenAI Setup
+Create an OpenAI Platform account and generate an API key.
+
+Store the key in:
+```
+.env
+```
+Example:
+```
+OPENAI_API_KEY=your_key_here
+OPENAI_MODEL=gpt-5.6-luna
+```
+
+The application loads the key using python-dotenv.
+
+---
+
+▶️ Running the Application
+
+Activate the virtual environment:
+```
+source .venv/bin/activate
+```
+Start the Streamlit interface:
+```
+streamlit run app.py
+```
+Then open:
+```
+http://localhost:8501
+```
+---
+
+
+
+
+
+
+
+
+
+
 
 
 
