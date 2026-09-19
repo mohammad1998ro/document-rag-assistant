@@ -246,6 +246,61 @@ http://localhost:8501
 ```
 ---
 
+🖥️ Using the Application
+
+1. Select an LLM provider
+
+Choose:
+```
+Ollama (Local)
+```
+or:
+```
+OpenAI (Cloud)
+```
+The RAG pipeline remains unchanged when switching providers.
+
+2. Upload a PDF
+
+Use the document uploader in the sidebar.
+
+3. Index the document
+
+Click:
+```
+Index Documents
+```
+The application will:
+```
+PDF
+↓
+Extract text
+↓
+Clean text
+↓
+Create chunks
+↓
+Generate embeddings
+↓
+Store vectors in ChromaDB
+```
+4. Ask a question
+
+Example:
+```
+Ce este programarea orientata pe obiecte?
+```
+The system retrieves relevant chunks and generates an answer based only on the indexed documentation.
+
+5. Review sources
+
+Each grounded answer can display:
+
+* filename
+* page number
+* similarity score
+---
+
 
 
 
